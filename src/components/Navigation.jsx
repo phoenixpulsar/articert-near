@@ -1,8 +1,6 @@
-import Image from 'next/image';
 import { useEffect, useState, useContext } from 'react';
-
 import { NearContext } from '@/context';
-import NearLogo from '/public/near-logo.svg';
+
 
 export const Navigation = () => {
   const { signedAccountId, wallet } = useContext(NearContext);
@@ -23,7 +21,13 @@ export const Navigation = () => {
 
   return (
     <nav>
-      <Image priority src={NearLogo} alt="NEAR" width="30" height="24" />
+      <img 
+        src="/near-logo.svg"
+        alt="NEAR"
+        width="30"
+        height="24"
+        loading="lazy"
+      />
       <button onClick={action}> {label} </button>
     </nav>
   );
